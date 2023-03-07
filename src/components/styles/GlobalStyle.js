@@ -103,6 +103,7 @@ meter {
 
 body {
   font-family: 'Lato', sans-serif;
+  background: #333;
 }
 `;
 
