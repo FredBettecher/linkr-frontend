@@ -1,5 +1,6 @@
 import { IoChevronDown } from "react-icons/io5";
 import styled from "styled-components";
+
 const StyledHeader = styled.header`
   width: 100vw;
   height: 4.5rem;
@@ -50,7 +51,7 @@ const Arrow = styled(IoChevronDown)`
   font-size: 30px;
   margin-left: auto;
 
-  transform: rotate(${({ isMenuOpen }) => (isMenuOpen ? "180deg" : "0deg")});
+  transform: rotate(${({ angle }) => angle});
   transition: all 300ms;
 
   @media (min-width: 720px) {
@@ -70,7 +71,7 @@ const StyledMenu = styled.div`
   align-items: center;
 
   position: fixed;
-  top: ${({ isMenuOpen }) => (isMenuOpen ? "72px" : "29px")};
+  top: ${props => (props.isMenuOpen ? "72px" : "29px")};
   right: 0;
 
   transition: all 300ms;
@@ -85,7 +86,7 @@ const StyledMenu = styled.div`
   @media (min-width: 720px) {
     width: 133px;
     height: 47px;
-    top: ${({ isMenuOpen }) => (isMenuOpen ? "72px" : "25px")};
+    top: ${props => (props.isMenuOpen ? "72px" : "25px")};
     p {
       font-size: 17px;
       line-height: 20px;
