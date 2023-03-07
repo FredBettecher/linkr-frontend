@@ -1,11 +1,25 @@
-import GlobalStyle from "./styles/GlobalStyle";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+
+import { GlobalContext } from "../contexts/GlobalContext";
+import { UserContext } from "../contexts/UserContext";
+import { userMock } from "../mock/mock";
+import Header from "./Header/Header";
 
 function App() {
   return (
-    <>
-      <GlobalStyle />
-      <h1>Hello Linkr!</h1>
-    </>
+    <BrowserRouter>
+      <GlobalContext.Provider value={{ nothing: null }}>
+        <UserContext.Provider value={userMock}>
+          <Routes>
+            {/* <Route path="/" element={<Login />} /> */}
+            {/* <Route path="/sign-up" element={<Signup />} /> */}
+            {/* <Route path="/hashtag/:hashtag" element={<Hashtag />} /> */}
+            <Route path="/timeline" element={<Header />} />
+            {/* <Route path="/user/:id" element={<User />} /> */}
+          </Routes>
+        </UserContext.Provider>
+      </GlobalContext.Provider>
+    </BrowserRouter>
   );
 }
 
