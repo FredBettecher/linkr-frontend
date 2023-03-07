@@ -1,11 +1,9 @@
-import { useState } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 import { GlobalContext } from "../contexts/GlobalContext";
 import { UserContext } from "../contexts/UserContext";
-import Header from "./Header/Header";
-
 import { userMock } from "../mock/mock";
+import Header from "./Header/Header";
 
 function App() {
   return (
