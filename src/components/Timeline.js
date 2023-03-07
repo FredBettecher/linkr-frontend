@@ -17,11 +17,12 @@ export default function Timeline() {
 }
 
 const StyledSection = styled.section`
-  margin: 91px 5%;
+  margin: 91px 0;
 
   h2 {
     color: #fff;
     font: 700 33px/49px "Oswald", sans-serif;
+    margin: 0 5%;
   }
 
   @media (min-width: 720px) {
@@ -31,6 +32,7 @@ const StyledSection = styled.section`
     h2 {
       font-size: 43px;
       line-height: 64px;
+      margin: 0;
     }
   }
 `;
