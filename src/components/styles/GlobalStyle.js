@@ -99,6 +99,11 @@ meter {
 /* Revert Modal native behavior */
 :where(dialog:modal) {
     all: revert;
-}`;
+}
+
+body {
+  font-family: 'Lato', sans-serif;
+}
+`;
 
 export default GlobalStyle;
