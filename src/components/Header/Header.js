@@ -10,7 +10,7 @@ export default function Header() {
     <>
       <StyledHeader>
         <h1>linkr</h1>
-        <Arrow isMenuOpen={isMenuOpen} onClick={() => setIsMenuOpen(!isMenuOpen)} />
+        <Arrow angle={isMenuOpen ? "180deg" : "0deg"} onClick={() => setIsMenuOpen(!isMenuOpen)} />
         <img src={pictureUrl} alt={`${username}'s avatar`} />
       </StyledHeader>
       <StyledMenu isMenuOpen={isMenuOpen}>

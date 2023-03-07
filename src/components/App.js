@@ -3,7 +3,8 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { GlobalContext } from "../contexts/GlobalContext";
 import { UserContext } from "../contexts/UserContext";
 import { userMock } from "../mock/mock";
-import Header from "./Header/Header";
+
+import Timeline from "./Timeline";
 
 function App() {
   return (
@@ -14,7 +15,7 @@ function App() {
             {/* <Route path="/" element={<Login />} /> */}
             {/* <Route path="/sign-up" element={<Signup />} /> */}
             {/* <Route path="/hashtag/:hashtag" element={<Hashtag />} /> */}
-            <Route path="/timeline" element={<Header />} />
+            <Route path="/timeline" element={<Timeline />} />
             {/* <Route path="/user/:id" element={<User />} /> */}
           </Routes>
         </UserContext.Provider>
