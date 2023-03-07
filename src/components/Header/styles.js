@@ -29,6 +29,20 @@ const StyledHeader = styled.header`
     height: 44px;
     border-radius: 50%;
   }
+
+  @media (min-width: 720px) {
+    padding: 0 2%;
+
+    h1 {
+      font-size: 49px;
+      line-height: 54px;
+    }
+
+    img {
+      width: 53px;
+      height: 53px;
+    }
+  }
 `;
 
 const Arrow = styled(IoChevronDown)`
@@ -38,6 +52,10 @@ const Arrow = styled(IoChevronDown)`
 
   transform: rotate(${({ isMenuOpen }) => (isMenuOpen ? "180deg" : "0deg")});
   transition: all 300ms;
+
+  @media (min-width: 720px) {
+    font-size: 32px;
+  }
 `;
 
 const StyledMenu = styled.div`
@@ -62,6 +80,16 @@ const StyledMenu = styled.div`
     font: 700 15px/18px "Lato", sans-serif;
     letter-spacing: 0.05em;
     color: #fff;
+  }
+
+  @media (min-width: 720px) {
+    width: 133px;
+    height: 47px;
+    top: ${({ isMenuOpen }) => (isMenuOpen ? "72px" : "25px")};
+    p {
+      font-size: 17px;
+      line-height: 20px;
+    }
   }
 `;
 
