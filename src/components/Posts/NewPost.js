@@ -28,6 +28,7 @@ const StyledContainer = styled.div`
 
   background: #fff;
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 16px;
 
   h3 {
     font-size: 17px;
@@ -40,6 +41,9 @@ const StyledContainer = styled.div`
 
   @media (min-width: 720px) {
     width: 611px;
+  }
+  @media (max-width: 720px) {
+    border-radius: 0px;
   }
 `;
 
