@@ -17,7 +17,7 @@ export default function Timeline() {
 }
 
 const StyledSection = styled.section`
-  margin: 91px 0;
+  margin: 91px 0px;
 
   h2 {
     color: #fff;
