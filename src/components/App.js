@@ -6,6 +6,7 @@ import { userMock } from "../mock/mock";
 import Timeline from "../pages/Timeline/Timeline";
 import Header from "./Header/Header";
 
+
 function App() {
   return (
     <BrowserRouter>
