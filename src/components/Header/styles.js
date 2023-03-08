@@ -2,7 +2,7 @@ import { IoChevronDown } from "react-icons/io5";
 import styled from "styled-components";
 const StyledHeader = styled.header`
   width: 100vw;
-  height: 72px;
+  height: 4.5rem;
   background: #151515;
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
   padding: 0 5%;
@@ -10,7 +10,7 @@ const StyledHeader = styled.header`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 12px;
+  gap: 0.75rem;
 
   position: fixed;
   top: 0;
@@ -21,6 +21,7 @@ const StyledHeader = styled.header`
     font: 700 45px/50px "Passion One", cursive;
     letter-spacing: 0.05em;
     color: #fff;
+    cursor: default;
   }
 
   img {
@@ -64,4 +65,37 @@ const StyledMenu = styled.div`
   }
 `;
 
-export { StyledHeader, Arrow, StyledMenu };
+const InputContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  margin-left: 14rem;
+  position: relative;
+`;
+
+const Input = styled.input`
+  width: 35.1875rem;
+  height: 2.8125rem;
+  border-radius: 0.5rem;
+  background-color: #FFF;
+  font-size: 1.1875rem;
+  padding-left: 1rem;
+  z-index: 1;
+  ::placeholder {
+    color: #C6C6C6;
+  }
+`;
+
+const SearchResult = styled.div`
+  background-color: #E7E7E7;
+  width: 35.1875rem;
+  border-radius: 0.5rem;
+  position: absolute;
+  top: 2rem;
+  padding-top: 1rem;
+  padding-left: 1rem;
+  overflow: hidden;
+  overflow-y: auto;
+`;
+
+export { StyledHeader, Arrow, StyledMenu, InputContainer, Input, SearchResult };
