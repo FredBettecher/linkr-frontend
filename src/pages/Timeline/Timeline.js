@@ -2,23 +2,6 @@ import Header from "../../components/Header/Header";
 import { StyledSection, Trending } from "./styles";
 import NewPost from "../../components/Posts/NewPost";
 import Posts from "../../components/Posts/Posts";
-/*
-export default function Timeline() {
-    return(
-        <>
-        <Container>
-            <Header />
-            <Title>timeline</Title>
-            <InnerContainer>
-                
-            </InnerContainer>
-        </Container>
-        <Trending>
-        </Trending>
-        </>
-    );
-}
-*/
 
 export default function Timeline() {
     return (
