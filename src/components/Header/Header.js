@@ -38,7 +38,7 @@ export default function Header() {
       </StyledHeader>
       <StyledMenu isMenuOpen={isMenuOpen}>
         {/* TODO: mudar o `p` p/ link the logout */}
-        <p>Logout</p>
+        <a>Logout</a>
       </StyledMenu>
     </>
   );

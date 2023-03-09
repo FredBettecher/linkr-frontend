@@ -8,6 +8,7 @@ import { useState } from "react"
 function NewAccount() {
 
     const goTo = useNavigate()
+    const now = new Date();
     const [userEmail, setEmail] = useState('')
     const [userPassword, setPassword] = useState('')
     const [userName, setUsername] = useState('')
@@ -22,12 +23,13 @@ function NewAccount() {
             email: userEmail,
             password: userPassword,
             username: userName,
-            picture: userPhoto
+            pictureUrl: userPhoto,
+            createdAt: now.getDay() + "/" + now.getMonth + "/" + now.getFullYear
         }
 
         try {
             console.log(process.env.REACT_APP_API_URL)
-            const aux = await axios.post(`${process.env.REACT_APP_API_URL}/sign-up`, post)
+            const aux = await axios.post(`${process.env.REACT_APP_API_URL}/signup`, post)
             setSentRequest(false)
             if (aux.status !== 201) return
             goTo("/")

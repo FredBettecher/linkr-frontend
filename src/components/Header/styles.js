@@ -58,7 +58,7 @@ const StyledMenu = styled.div`
   transition: all 300ms;
 
   /* TODO: mudar isso pro link de logout */
-  p {
+  a {
     font: 700 15px/18px "Lato", sans-serif;
     letter-spacing: 0.05em;
     color: #fff;
