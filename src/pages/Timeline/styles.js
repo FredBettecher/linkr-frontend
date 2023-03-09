@@ -1,6 +1,10 @@
 import styled from "styled-components";
 
-  
+export const Content = styled.div`
+display: flex;
+justify-content: center;
+`
+
 export const StyledSection = styled.section`
 margin: 91px 0px;
 
@@ -22,25 +26,36 @@ h2 {
 }
 `;
 
-/*
-export const Container = styled.div`
-    display: flex;
-    flex-direction: column;
-    margin-top: 7.8125rem;
-    margin-left: 15rem;
-`;
-
-export const Title = styled.h1`
-    font-size: 2.6875rem;
-    font-family: 'Oswald', sans-serif;
-    color: #FFFFFF;
-`;
-
-export const InnerContainer = styled.div`
-    
-`;*/
-
 export const Trending = styled.div`
-    display: flex;
-    flex-direction: column;
+margin: 230px 20px;
+display: flex;
+flex-direction: column;
+width: 301px;
+height: 406px;
+background: #171717;
+border-radius: 16px;
+padding: 20px;
+  h2{
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 19px;
+    line-height: 23px;
+    letter-spacing: 0.05em;
+    color: #FFFFFF;
+    margin: 0px 0px 20px 0px;
+  }
+  p{
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 19px;
+    line-height: 23px;
+    letter-spacing: 0.05em;
+    color: #FFFFFF;
+  }
+
+  @media (max-width: 720px) {
+  display: none;
+}
 `;
