@@ -28,7 +28,7 @@ export default function Header() {
         <h1>linkr</h1>
         <InputContainer>
           <Input type="text" placeholder="Search for people" onChange={handleSearch} />
-          {users.length !== 0 &&(
+          {users.length !== 0 && (
             <SearchResult>{searchUsers}</SearchResult>
           )
           }
