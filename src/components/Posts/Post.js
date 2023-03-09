@@ -5,6 +5,8 @@ import {
     ContentLink, ContentImg
 } from "./PostStyle.js";
 
+
+
 import { userMock } from "../../mock/mock.js";
 
 export default function Post() {

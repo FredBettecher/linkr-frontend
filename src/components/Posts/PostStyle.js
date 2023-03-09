@@ -1,4 +1,5 @@
 import styled from "styled-components";
+//import { CgTrashEmpty, AiOutlineHeart } from 'react-icons/fa';
 
 
 export const PostStyle = styled.div`
@@ -44,10 +45,21 @@ height: 20px;
 background: #FFFFFF;
 margin: 0px 0px 8px 0px;
 @media (max-width: 720px) {
-    width: 15px;
+width: 15px;
 height: 17px;
 margin: 0px 0px 10px 0px;}
 `
+/*
+export const LikeIcon = styled(AiOutlineHeart)`
+width: 18px;
+height: 20px;
+background: #FFFFFF;
+margin: 0px 0px 8px 0px;
+@media (max-width: 720px) {
+width: 15px;
+height: 17px;
+margin: 0px 0px 10px 0px;}
+`*/
 
 export const LikesNumber = styled.p`
 font-family: 'Lato';
