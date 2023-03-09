@@ -4,8 +4,9 @@ import { GlobalContext } from "../contexts/GlobalContext";
 import { UserContext } from "../contexts/UserContext";
 import { userMock } from "../mock/mock";
 import Timeline from "../pages/Timeline/Timeline";
-import Header from "./Header/Header";
+// import Header from "./Header/Header";
 import SignIn from "./SignIn/SignIn"
+import SignUp from "./SignUp/SignUp"
 
 
 function App() {
@@ -15,7 +16,7 @@ function App() {
         <UserContext.Provider value={userMock}>
           <Routes>
             <Route path="/" element={<SignIn />} />
-            {/* <Route path="/sign-up" element={<SignUp />} /> */}
+            <Route path="/sign-up" element={<SignUp />} />
             {/* <Route path="/hashtag/:hashtag" element={<Hashtag />} /> */}
             <Route path="/timeline" element={<Timeline />} />
             {/* <Route path="/user/:id" element={<User />} /> */}
