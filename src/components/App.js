@@ -8,6 +8,7 @@ import Timeline from "../pages/Timeline/Timeline";
 import SignIn from "./SignIn/SignIn"
 import SignUp from "./SignUp/SignUp"
 
+
 function App() {
   return (
     <BrowserRouter>

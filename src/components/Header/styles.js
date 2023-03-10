@@ -31,6 +31,20 @@ const StyledHeader = styled.header`
     height: 44px;
     border-radius: 50%;
   }
+
+  @media (min-width: 720px) {
+    padding: 0 2%;
+
+    h1 {
+      font-size: 49px;
+      line-height: 54px;
+    }
+
+    img {
+      width: 53px;
+      height: 53px;
+    }
+  }
 `;
 
 const Arrow = styled(IoChevronDown)`
@@ -38,8 +52,12 @@ const Arrow = styled(IoChevronDown)`
   font-size: 30px;
   margin-left: auto;
 
-  transform: rotate(${({ isMenuOpen }) => (isMenuOpen ? "180deg" : "0deg")});
+  transform: rotate(${({ angle }) => angle});
   transition: all 300ms;
+
+  @media (min-width: 720px) {
+    font-size: 32px;
+  }
 `;
 
 const StyledMenu = styled.div`
@@ -54,16 +72,28 @@ const StyledMenu = styled.div`
   align-items: center;
 
   position: fixed;
-  top: ${({ isMenuOpen }) => (isMenuOpen ? "72px" : "29px")};
+  top: ${props => (props.isMenuOpen ? "72px" : "29px")};
   right: 0;
 
   transition: all 300ms;
 
   /* TODO: mudar isso pro link de logout */
   p {
-    font: 700 15px/18px "Lato", sans-serif;
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 18px;
     letter-spacing: 0.05em;
     color: #fff;
+  }
+
+  @media (min-width: 720px) {
+    width: 133px;
+    height: 47px;
+    top: ${props => (props.isMenuOpen ? "72px" : "25px")};
+    p {
+      font-size: 17px;
+      line-height: 20px;
+    }
   }
 `;
 
