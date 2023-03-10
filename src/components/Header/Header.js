@@ -1,5 +1,5 @@
-import { useContext, useEffect, useState, Link } from "react";
-import { StyledHeader, Arrow, StyledMenu, Input, InputContainer, SearchResult } from "./styles";
+import { useContext, useEffect, useState } from "react";
+import { StyledHeader, Arrow, StyledMenu, Input, InputContainer, SearchResult, Img, StyledLink } from "./styles";
 import { UserContext } from "../../contexts/UserContext";
 import axios from "axios";
 
@@ -10,7 +10,7 @@ export default function Header() {
   const [searchResults, setSearchResults] = useState([]);
 
   useEffect(() => {
-    const promise = axios.get(`http://localhost:5000/users`)
+    const promise = axios.get(`https://linkr-backend-sr4s.onrender.com/users`)
     promise.then(resp => setUsers(resp.data));
     promise.catch(err => console.log(err.message));
   }, []);
@@ -28,7 +28,9 @@ export default function Header() {
     return(
         <ul>
             {searchResults.map(user => (
-                <li key={user.id}>{user.username}</li>
+                <li key={user.id}>
+                  <StyledLink> <Img src={user.pictureUrl} /> {user.username} </StyledLink>
+                </li>
             ))}
         </ul>
     );
@@ -40,7 +42,7 @@ export default function Header() {
         <h1>linkr</h1>
         <InputContainer>
           <Input type="text" placeholder="Search for people" onChange={handleSearch} />
-          {searchResults.length > 0 && <SearchResult>{searchUsers(searchResults)}</SearchResult>}
+          {searchResults.length !== 0 && <SearchResult>{searchUsers(searchResults)}</SearchResult>}
         </InputContainer>
         <Arrow isMenuOpen={isMenuOpen} onClick={() => setIsMenuOpen(!isMenuOpen)} />
         <img src={pictureUrl} alt={`${username}'s avatar`} />
