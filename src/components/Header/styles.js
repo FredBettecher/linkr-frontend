@@ -1,5 +1,7 @@
 import { IoChevronDown } from "react-icons/io5";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
+
 const StyledHeader = styled.header`
   width: 100vw;
   height: 4.5rem;
@@ -98,4 +100,17 @@ const SearchResult = styled.div`
   overflow-y: auto;
 `;
 
-export { StyledHeader, Arrow, StyledMenu, InputContainer, Input, SearchResult };
+const StyledLink = styled(Link)`
+  display: flex;
+  align-items: center;
+  color: #515151;
+  font-size: 1.1875rem;
+  margin-bottom: 1rem;
+  cursor: pointer;
+`;
+
+const Img = styled.img`
+  margin-right: 0.75rem;
+`;
+
+export { StyledHeader, Arrow, StyledMenu, InputContainer, Input, SearchResult, Img, StyledLink };

@@ -1,25 +1,45 @@
 import { useContext, useEffect, useState } from "react";
-import { StyledHeader, Arrow, StyledMenu, Input, InputContainer, SearchResult } from "./styles";
+import { StyledHeader, Arrow, StyledMenu, Input, InputContainer, SearchResult, Img, StyledLink } from "./styles";
 import { UserContext } from "../../contexts/UserContext";
-import searchUsers from "../../services/searchUsers";
 import axios from "axios";
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { username, pictureUrl } = useContext(UserContext);
   const [users, setUsers] = useState([]);
+  const [searchResults, setSearchResults] = useState([]);
 
   useEffect(() => {
-    const promise = axios.get(`http://localhost:5000/users`)
+    const promise = axios.get(`https://linkr-backend-sr4s.onrender.com/users`)
     promise.then(resp => setUsers(resp.data));
     promise.catch(err => console.log(err.message));
   }, []);
 
   const handleSearch = (event) => {
     const search = event.target.value;
-    const newSearch = users.filter(user => {
-      return user.title.includes(search);
+    
+    if(search.trim() === ""){
+      setSearchResults([]);
+      return;
+    }
+
+    const result = users.filter(user => {
+      return user.username.toLowerCase().includes(search.toLowerCase());
     });
+
+    setSearchResults(result);
+  };
+
+  const searchUsers = () => {
+      return(
+        <ul>
+            {searchResults.map(user => (
+                <li key={user.id}>
+                  <StyledLink> <Img src={user.pictureUrl} /> {user.username} </StyledLink>
+                </li>
+            ))}
+        </ul>
+    );
   };
 
   return (
@@ -28,10 +48,9 @@ export default function Header() {
         <h1>linkr</h1>
         <InputContainer>
           <Input type="text" placeholder="Search for people" onChange={handleSearch} />
-          {users.length !== 0 &&(
-            <SearchResult>{searchUsers}</SearchResult>
-          )
-          }
+          {searchResults.length !== 0 && searchResults[0].username !== "" && (
+          <SearchResult>{searchUsers(searchResults)}</SearchResult>
+          )}
         </InputContainer>
         <Arrow isMenuOpen={isMenuOpen} onClick={() => setIsMenuOpen(!isMenuOpen)} />
         <img src={pictureUrl} alt={`${username}'s avatar`} />
