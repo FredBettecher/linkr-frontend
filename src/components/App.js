@@ -7,6 +7,7 @@ import Timeline from "../pages/Timeline/Timeline";
 // import Header from "./Header/Header";
 import SignIn from "./SignIn/SignIn"
 import SignUp from "./SignUp/SignUp"
+import AnotherUserPage from "../pages/AnotherUserPage/AnotherUserPage";
 
 
 function App() {
@@ -19,7 +20,7 @@ function App() {
             <Route path="/sign-up" element={<SignUp />} />
             {/* <Route path="/hashtag/:hashtag" element={<Hashtag />} /> */}
             <Route path="/timeline" element={<Timeline />} />
-            {/* <Route path="/user/:id" element={<User />} /> */}
+            <Route path="/user/:id" element={<AnotherUserPage />} />
           </Routes>
         </UserContext.Provider>
       </GlobalContext.Provider>
