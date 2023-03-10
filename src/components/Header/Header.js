@@ -17,15 +17,21 @@ export default function Header() {
 
   const handleSearch = (event) => {
     const search = event.target.value;
+    
+    if(search.trim() === ""){
+      setSearchResults([]);
+      return;
+    }
+
     const result = users.filter(user => {
-      return user.username.includes(search);
+      return user.username.toLowerCase().includes(search.toLowerCase());
     });
 
     setSearchResults(result);
   };
 
   const searchUsers = () => {
-    return(
+      return(
         <ul>
             {searchResults.map(user => (
                 <li key={user.id}>
@@ -42,7 +48,9 @@ export default function Header() {
         <h1>linkr</h1>
         <InputContainer>
           <Input type="text" placeholder="Search for people" onChange={handleSearch} />
-          {searchResults.length !== 0 && <SearchResult>{searchUsers(searchResults)}</SearchResult>}
+          {searchResults.length !== 0 && searchResults[0].username !== "" && (
+          <SearchResult>{searchUsers(searchResults)}</SearchResult>
+          )}
         </InputContainer>
         <Arrow isMenuOpen={isMenuOpen} onClick={() => setIsMenuOpen(!isMenuOpen)} />
         <img src={pictureUrl} alt={`${username}'s avatar`} />
